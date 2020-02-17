@@ -12,23 +12,23 @@ namespace Workshop2_TravelExperts {
     public static class DBO {
         public static bool AddProdToPackage(int prodID, int packageID ) {
             TravelExpertsDBCon db = new TravelExpertsDBCon();
-            List<Products_Suppliers> ps;
-            Packages_Products_Suppliers pps = new Packages_Products_Suppliers();
+            List<Products_Suppliers> product_supplier;
+            Packages_Products_Suppliers packageProductSupplier = new Packages_Products_Suppliers();
             bool success = true;
             string query;
 
             // Getting the info from the db (assumes first option is correct, this is a big assumtion)
             query = "Select * from Products_Suppliers where ProductID = " + prodID;
-            SQLAdapter.SQLAdapter.GetFromDB<Products_Suppliers>(out ps, db, query);
+            SQLAdapter.SQLAdapter.GetFromDB<Products_Suppliers>(out product_supplier, db, query);
 
             // Creating the DB object
-            if (ps.Count > 0) {
-                pps.ProductSupplierID = ps[0].ProductSupplierID;
-                pps.PackageID = packageID;
+            if (product_supplier.Count > 0) {
+                packageProductSupplier.ProductSupplierID = product_supplier[0].ProductSupplierID;
+                packageProductSupplier.PackageID = packageID;
             }
             else { success = false; }
 
-            if(!SQLAdapter.SQLAdapter.InsertToDB<Packages_Products_Suppliers>(pps, db)) success = false;
+            if(!SQLAdapter.SQLAdapter.InsertToDBNOID<Packages_Products_Suppliers>(packageProductSupplier, db)) success = false;
             return success;
         }
     }

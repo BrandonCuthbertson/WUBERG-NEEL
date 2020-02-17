@@ -29,8 +29,8 @@
             this.lblName = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbProducts = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -84,31 +84,33 @@
             this.cmbProducts.Size = new System.Drawing.Size(364, 32);
             this.cmbProducts.TabIndex = 5;
             // 
-            // button1
+            // btnSubmit
             // 
-            this.button1.Location = new System.Drawing.Point(54, 294);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(245, 30);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSubmit.Location = new System.Drawing.Point(54, 294);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(245, 30);
+            this.btnSubmit.TabIndex = 6;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
-            // button2
+            // btnClose
             // 
-            this.button2.Location = new System.Drawing.Point(325, 294);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(253, 30);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Close";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnClose.Location = new System.Drawing.Point(325, 294);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(253, 30);
+            this.btnClose.TabIndex = 7;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // ToAddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 633);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.cmbProducts);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblName);
@@ -116,7 +118,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ToAddProduct";
             this.Text = "ToAddProduct";
             this.Load += new System.EventHandler(this.ToAddProduct_Load);
@@ -133,7 +135,7 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbProducts;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Button btnClose;
     }
 }
