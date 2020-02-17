@@ -36,79 +36,95 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 56);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(60, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 24);
+            this.label1.Size = new System.Drawing.Size(112, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Package ID:";
+            this.label1.Text = "Package ID: ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 120);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(29, 94);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 24);
+            this.label2.Size = new System.Drawing.Size(143, 24);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Package Name:";
+            this.label2.Text = "Package Name: ";
             // 
             // lblPackId
             // 
-            this.lblPackId.BackColor = System.Drawing.Color.White;
-            this.lblPackId.Location = new System.Drawing.Point(210, 56);
+            this.lblPackId.BackColor = System.Drawing.Color.Black;
+            this.lblPackId.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblPackId.Location = new System.Drawing.Point(178, 30);
             this.lblPackId.Name = "lblPackId";
             this.lblPackId.Size = new System.Drawing.Size(368, 24);
             this.lblPackId.TabIndex = 2;
             // 
             // lblName
             // 
-            this.lblName.BackColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(210, 120);
+            this.lblName.BackColor = System.Drawing.Color.Black;
+            this.lblName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblName.Location = new System.Drawing.Point(178, 94);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(368, 24);
             this.lblName.TabIndex = 3;
+            this.lblName.Click += new System.EventHandler(this.lblName_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(50, 197);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(85, 145);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 24);
+            this.label5.Size = new System.Drawing.Size(87, 24);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Product";
+            this.label5.Text = "Product: ";
             // 
             // cmbProducts
             // 
+            this.cmbProducts.BackColor = System.Drawing.Color.Black;
+            this.cmbProducts.ForeColor = System.Drawing.SystemColors.Window;
             this.cmbProducts.FormattingEnabled = true;
-            this.cmbProducts.Location = new System.Drawing.Point(214, 197);
+            this.cmbProducts.Location = new System.Drawing.Point(178, 145);
             this.cmbProducts.Name = "cmbProducts";
-            this.cmbProducts.Size = new System.Drawing.Size(364, 32);
+            this.cmbProducts.Size = new System.Drawing.Size(368, 32);
             this.cmbProducts.TabIndex = 5;
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(54, 294);
+            this.btnSubmit.BackColor = System.Drawing.Color.DimGray;
+            this.btnSubmit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSubmit.Location = new System.Drawing.Point(561, 30);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(245, 30);
+            this.btnSubmit.Size = new System.Drawing.Size(182, 30);
             this.btnSubmit.TabIndex = 6;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Text = "&Submit";
+            this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(325, 294);
+            this.btnClose.BackColor = System.Drawing.Color.DimGray;
+            this.btnClose.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnClose.Location = new System.Drawing.Point(561, 147);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(253, 30);
+            this.btnClose.Size = new System.Drawing.Size(182, 30);
             this.btnClose.TabIndex = 7;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Text = "<&Back";
+            this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // ToAddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(838, 633);
+            this.BackgroundImage = global::Workshop2_TravelExperts.Properties.Resources.Background;
+            this.ClientSize = new System.Drawing.Size(777, 240);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.cmbProducts);

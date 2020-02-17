@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>hnet.com-image.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -116,6 +119,8 @@
   <ItemGroup>
     <Content Include="Forms\Background.png" />
     <None Include="Images\Background.png" />
+    <Content Include="hnet.com-image.ico" />
+    <Content Include="Images\hnet.com-image.ico" />
     <Content Include="travelexperts-mssql.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
