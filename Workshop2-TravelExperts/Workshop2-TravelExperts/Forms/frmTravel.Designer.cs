@@ -51,7 +51,7 @@
             this.cmbPackages.BackColor = System.Drawing.Color.Black;
             this.cmbPackages.ForeColor = System.Drawing.SystemColors.Window;
             this.cmbPackages.FormattingEnabled = true;
-            this.cmbPackages.Location = new System.Drawing.Point(217, 51);
+            this.cmbPackages.Location = new System.Drawing.Point(202, 18);
             this.cmbPackages.Name = "cmbPackages";
             this.cmbPackages.Size = new System.Drawing.Size(323, 32);
             this.cmbPackages.TabIndex = 0;
@@ -60,9 +60,9 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(14, 52);
+            this.label1.Location = new System.Drawing.Point(27, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 31);
+            this.label1.Size = new System.Drawing.Size(149, 31);
             this.label1.TabIndex = 2;
             this.label1.Text = "Package Name: ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -71,7 +71,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(79, 104);
+            this.label2.Location = new System.Drawing.Point(64, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 24);
             this.label2.TabIndex = 3;
@@ -81,16 +81,16 @@
             // lblPackID
             // 
             this.lblPackID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblPackID.Location = new System.Drawing.Point(218, 104);
+            this.lblPackID.Location = new System.Drawing.Point(203, 71);
             this.lblPackID.Name = "lblPackID";
-            this.lblPackID.Size = new System.Drawing.Size(322, 24);
+            this.lblPackID.Size = new System.Drawing.Size(192, 24);
             this.lblPackID.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(85, 140);
+            this.label4.Location = new System.Drawing.Point(70, 107);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 24);
             this.label4.TabIndex = 5;
@@ -101,7 +101,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(551, 149);
+            this.label6.Location = new System.Drawing.Point(78, 161);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(98, 24);
             this.label6.TabIndex = 7;
@@ -112,7 +112,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Location = new System.Drawing.Point(74, 188);
+            this.label8.Location = new System.Drawing.Point(55, 293);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(117, 24);
             this.label8.TabIndex = 9;
@@ -122,16 +122,16 @@
             // lblDesc
             // 
             this.lblDesc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblDesc.Location = new System.Drawing.Point(217, 188);
+            this.lblDesc.Location = new System.Drawing.Point(203, 293);
             this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(323, 57);
+            this.lblDesc.Size = new System.Drawing.Size(469, 58);
             this.lblDesc.TabIndex = 10;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Location = new System.Drawing.Point(81, 260);
+            this.label10.Location = new System.Drawing.Point(66, 210);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(106, 24);
             this.label10.TabIndex = 11;
@@ -141,36 +141,36 @@
             // lblPrice
             // 
             this.lblPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblPrice.Location = new System.Drawing.Point(217, 260);
+            this.lblPrice.Location = new System.Drawing.Point(202, 210);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(323, 24);
+            this.lblPrice.Size = new System.Drawing.Size(193, 24);
             this.lblPrice.TabIndex = 12;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Location = new System.Drawing.Point(12, 305);
+            this.label12.Location = new System.Drawing.Point(61, 255);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(179, 24);
+            this.label12.Size = new System.Drawing.Size(115, 24);
             this.label12.TabIndex = 13;
-            this.label12.Text = "Agency Commision: ";
+            this.label12.Text = "Commision: ";
             // 
             // lblCommision
             // 
             this.lblCommision.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblCommision.Location = new System.Drawing.Point(217, 305);
+            this.lblCommision.Location = new System.Drawing.Point(202, 255);
             this.lblCommision.Name = "lblCommision";
-            this.lblCommision.Size = new System.Drawing.Size(323, 24);
+            this.lblCommision.Size = new System.Drawing.Size(193, 24);
             this.lblCommision.TabIndex = 14;
             // 
             // btnAddNew
             // 
             this.btnAddNew.BackColor = System.Drawing.Color.DimGray;
             this.btnAddNew.ForeColor = System.Drawing.Color.White;
-            this.btnAddNew.Location = new System.Drawing.Point(217, 347);
+            this.btnAddNew.Location = new System.Drawing.Point(421, 161);
             this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(168, 32);
+            this.btnAddNew.Size = new System.Drawing.Size(251, 33);
             this.btnAddNew.TabIndex = 15;
             this.btnAddNew.Text = "&Add New Package";
             this.btnAddNew.UseVisualStyleBackColor = false;
@@ -180,9 +180,9 @@
             // 
             this.btnEdit.BackColor = System.Drawing.Color.DimGray;
             this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(394, 347);
+            this.btnEdit.Location = new System.Drawing.Point(419, 71);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(182, 31);
+            this.btnEdit.Size = new System.Drawing.Size(253, 33);
             this.btnEdit.TabIndex = 16;
             this.btnEdit.Text = "&Edit Package";
             this.btnEdit.UseVisualStyleBackColor = false;
@@ -192,9 +192,9 @@
             // 
             this.btnQuit.BackColor = System.Drawing.Color.DimGray;
             this.btnQuit.ForeColor = System.Drawing.Color.White;
-            this.btnQuit.Location = new System.Drawing.Point(813, 348);
+            this.btnQuit.Location = new System.Drawing.Point(421, 369);
             this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(182, 31);
+            this.btnQuit.Size = new System.Drawing.Size(251, 30);
             this.btnQuit.TabIndex = 17;
             this.btnQuit.Text = "&Quit";
             this.btnQuit.UseVisualStyleBackColor = false;
@@ -205,42 +205,42 @@
             this.dtpStart.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dtpStart.CalendarMonthBackground = System.Drawing.SystemColors.MenuText;
             this.dtpStart.Enabled = false;
-            this.dtpStart.Location = new System.Drawing.Point(18, 12);
+            this.dtpStart.Location = new System.Drawing.Point(536, 15);
             this.dtpStart.Name = "dtpStart";
-            this.dtpStart.Size = new System.Drawing.Size(313, 32);
+            this.dtpStart.Size = new System.Drawing.Size(18, 32);
             this.dtpStart.TabIndex = 17;
             // 
             // dtpEnd
             // 
             this.dtpEnd.Enabled = false;
-            this.dtpEnd.Location = new System.Drawing.Point(337, 13);
+            this.dtpEnd.Location = new System.Drawing.Point(560, 15);
             this.dtpEnd.Name = "dtpEnd";
-            this.dtpEnd.Size = new System.Drawing.Size(339, 32);
+            this.dtpEnd.Size = new System.Drawing.Size(20, 32);
             this.dtpEnd.TabIndex = 18;
             // 
             // lblStart
             // 
             this.lblStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblStart.Location = new System.Drawing.Point(218, 147);
+            this.lblStart.Location = new System.Drawing.Point(203, 114);
             this.lblStart.Name = "lblStart";
-            this.lblStart.Size = new System.Drawing.Size(322, 24);
+            this.lblStart.Size = new System.Drawing.Size(192, 24);
             this.lblStart.TabIndex = 19;
             // 
             // lblEnd
             // 
             this.lblEnd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblEnd.Location = new System.Drawing.Point(655, 149);
+            this.lblEnd.Location = new System.Drawing.Point(203, 161);
             this.lblEnd.Name = "lblEnd";
-            this.lblEnd.Size = new System.Drawing.Size(322, 24);
+            this.lblEnd.Size = new System.Drawing.Size(192, 24);
             this.lblEnd.TabIndex = 20;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.DimGray;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(582, 347);
+            this.button1.Location = new System.Drawing.Point(419, 114);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(184, 30);
+            this.button1.Size = new System.Drawing.Size(253, 33);
             this.button1.TabIndex = 21;
             this.button1.Text = "Add Product";
             this.button1.UseVisualStyleBackColor = false;
@@ -253,7 +253,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImage = global::Workshop2_TravelExperts.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1007, 413);
+            this.ClientSize = new System.Drawing.Size(704, 411);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblEnd);
             this.Controls.Add(this.lblStart);

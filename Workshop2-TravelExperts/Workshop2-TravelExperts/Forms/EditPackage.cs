@@ -17,33 +17,140 @@ namespace Workshop2_TravelExperts {
         }
         private void EditPackage_Load(object sender, EventArgs e) {
             this.DisplayPackage();
+
+            //hides error bboxes -- BC
+            lblErrorPackageName.Visible = false;
+            lblErrorStart.Visible = false;
+            lblErrorEnd.Visible = false;
+            lblErrorPackageDesc.Visible = false;
+            lblErrorBasePrice.Visible = false;
+            lblErrorAgencyCommission.Visible = false;
         }
         private void btnSubmit_Click(object sender, EventArgs e)
         {   //brandons validations
-
-
-
-            //Neels Code
-            Packages newPack = new Packages();
-            newPack.PackageId = package.PackageId;
-            this.PutPackageData(newPack);
-            try {
-                if (!TravelExpertsDB.UpdatePackage(package, newPack)) {
-                    MessageBox.Show("Another user has updated or " +
-                        "deleted that customer.", "Database Error");
-                    this.DialogResult = DialogResult.Retry;
-                }
-                else // success
+            if (Validator.IsPresent(txtPkgName, "Package Name") == true &&
+                dtpStart.Value < dtpEnd.Value &&
+                Validator.IsPresent(txtDesc, "Description") == true &&
+                Validator.IsDecimal(txtBase, "Base Price") == true && Validator.IsNonNegativeDecimal(txtBase, "Base Price") == true &&
+                Validator.IsDecimal(txtAgency, "Agency Commission") == true && Validator.IsNonNegativeDecimal(txtAgency, "Agency Commission") ==true &&
+                Convert.ToDecimal(txtBase.Text) > Convert.ToDecimal(txtAgency.Text)
+                )//Everything is valid
+            {
+                //Neels Code
+                Packages newPack = new Packages();
+                newPack.PackageId = package.PackageId;
+                this.PutPackageData(newPack);
+                try
                 {
-                    package = newPack;
-                    this.DialogResult = DialogResult.OK;
+                    if (!TravelExpertsDB.UpdatePackage(package, newPack))
+                    {
+                        MessageBox.Show("Another user has updated or " +
+                            "deleted that customer.", "Database Error");
+                        this.DialogResult = DialogResult.Retry;
+                    }
+                    else // success
+                    {
+                        package = newPack;
+                        this.DialogResult = DialogResult.OK;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                }
+                //Brandons Code
+                lblError.Text = "";
+                //Hides error Labels
+                lblErrorPackageName.Visible = true;
+                lblErrorNameMassage.Text = "";
+                lblDateError.Text = "";
+                lblErrorStart.Visible = false;
+                lblErrorEnd.Visible = false;
+                lblDescError.Text = "";
+                lblErrorPackageDesc.Visible = false;
+                lblErrorBasePrice.Visible = false;
+                lblBaseError.Text = "";
+                lblErrorAgencyCommission.Visible = false;
+                lblAgencyError.Text = "";
+
+                Application.Restart();//You have to reload the form when you submit
+            }
+            else //go threw each box and tell its not valid by BRANDON
+            {
+                if (Validator.IsPresent(txtPkgName, "Package Name") == false)//Package Name Error
+                {
+                    lblErrorNameMassage.Text = "Package Name is Required";
+                    lblErrorPackageName.Visible = true;
+                }
+                else
+                {
+                    lblErrorPackageName.Visible = false;
+                    lblErrorNameMassage.Text = "";
+                }
+                
+                if (dtpStart.Value > dtpEnd.Value) //Date Error
+                {
+                    lblDateError.Text = "Start Date must be after End Date";
+                    lblErrorStart.Visible = true;
+                    lblErrorEnd.Visible = true;
+                }
+                else
+                {
+                    lblDateError.Text = "";
+                    lblErrorStart.Visible = false;
+                    lblErrorEnd.Visible = false;
+                }
+                
+                if (Validator.IsPresent(txtDesc, "Description") == false)//Description Error
+                {
+                    lblDescError.Text = "Please insert a description";
+                    lblErrorPackageDesc.Visible = true;
+                }
+                else
+                {
+                    lblDescError.Text = "";
+                    lblErrorPackageDesc.Visible = false;
+                }
+
+                if (Validator.IsDecimal(txtBase, "Base Price") == false) //Base Price Error
+                {
+                    lblErrorBasePrice.Visible = true;
+                    lblBaseError.Text = "Please insert a number that is greater than zero";
+                }
+                else if (Validator.IsDecimal(txtBase, "Base Price") == true && Validator.IsNonNegativeDecimal(txtBase, "Base Price") == false)
+                {
+                    lblErrorBasePrice.Visible = true;
+                    lblBaseError.Text = "Number inserted must be greater than zero";
+                }
+                else
+                {
+                    lblErrorBasePrice.Visible = false;
+                    lblBaseError.Text = "";
+                }
+
+                if (Validator.IsDecimal(txtAgency, "Agency Commission") == false )
+                {
+                    lblErrorAgencyCommission.Visible = true;
+                    lblAgencyError.Text = "Please insert a number that is greater than zero ";
+                }
+                else if (Validator.IsDecimal(txtAgency, "Agency Commission") == true && Validator.IsNonNegativeDecimal(txtAgency, "Agency Commission") == false)
+                {
+                    lblErrorAgencyCommission.Visible = true;
+                    lblAgencyError.Text = "Number inserted must be greater than zero";
+                }
+                else if (Convert.ToDecimal(txtBase.Text) < Convert.ToDecimal(txtAgency.Text))
+                {
+                    lblErrorAgencyCommission.Visible = false;
+                    lblAgencyError.Text = "Agency Commission cannot be greater than the Base price";
+                }
+                else
+                {
+                    lblErrorAgencyCommission.Visible = true;
+                    lblErrorBasePrice.Visible = true;
+                    lblAgencyError.Text = "";
                 }
             }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
-            }
-            //Brandons Code
-            Application.Restart();//You have to reload the form when you submit
+            /* */
         }
         private void DisplayPackage() {
             label1.Text = Convert.ToString(package.PackageId);
