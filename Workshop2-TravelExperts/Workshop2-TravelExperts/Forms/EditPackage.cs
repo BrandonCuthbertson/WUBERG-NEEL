@@ -30,7 +30,6 @@ namespace Workshop2_TravelExperts {
         {   //brandons validations
             if (Validator.IsPresent(txtPkgName, "Package Name") == true &&
                 dtpStart.Value < dtpEnd.Value &&
-                dtpStart.Value != dtpEnd.Value &&
                 Validator.IsPresent(txtDesc, "Description") == true &&
                 Validator.IsDecimal(txtBase, "Base Price") == true && Validator.IsNonNegativeDecimal(txtBase, "Base Price") == true &&
                 Validator.IsDecimal(txtAgency, "Agency Commission") == true && Validator.IsNonNegativeDecimal(txtAgency, "Agency Commission") ==true &&
@@ -59,7 +58,20 @@ namespace Workshop2_TravelExperts {
                 {
                     MessageBox.Show(ex.Message, ex.GetType().ToString());
                 }
-               
+                //Brandons Code
+                lblError.Text = "";
+                //Hides error Labels
+                lblErrorPackageName.Visible = true;
+                lblErrorNameMassage.Text = "";
+                lblDateError.Text = "";
+                lblErrorStart.Visible = false;
+                lblErrorEnd.Visible = false;
+                lblDescError.Text = "";
+                lblErrorPackageDesc.Visible = false;
+                lblErrorBasePrice.Visible = false;
+                lblBaseError.Text = "";
+                lblErrorAgencyCommission.Visible = false;
+                lblAgencyError.Text = "";
 
                 Application.Restart();//You have to reload the form when you submit
             }
@@ -76,15 +88,9 @@ namespace Workshop2_TravelExperts {
                     lblErrorNameMassage.Text = "";
                 }
                 
-                if (dtpStart.Value > dtpEnd.Value) //Date Error Start is > End
+                if (dtpStart.Value > dtpEnd.Value) //Date Error
                 {
                     lblDateError.Text = "Start Date must be after End Date";
-                    lblErrorStart.Visible = true;
-                    lblErrorEnd.Visible = true;
-                }
-                else if (dtpStart.Value == dtpEnd.Value)//Date Error Start is = End
-                {
-                    lblDateError.Text = "Start Date cannot be on End Date";
                     lblErrorStart.Visible = true;
                     lblErrorEnd.Visible = true;
                 }
@@ -122,7 +128,7 @@ namespace Workshop2_TravelExperts {
                     lblBaseError.Text = "";
                 }
 
-                if (Validator.IsDecimal(txtAgency, "Agency Commission") == false )//commison error
+                if (Validator.IsDecimal(txtAgency, "Agency Commission") == false )
                 {
                     lblErrorAgencyCommission.Visible = true;
                     lblAgencyError.Text = "Please insert a number that is greater than zero ";
@@ -132,18 +138,15 @@ namespace Workshop2_TravelExperts {
                     lblErrorAgencyCommission.Visible = true;
                     lblAgencyError.Text = "Number inserted must be greater than zero";
                 }
-                else if (Validator.IsDecimal(txtAgency, "Agency Commission") == true &&
-                    Validator.IsDecimal(txtBase, "Base Price") == true && 
-                    Convert.ToDecimal(txtBase.Text) <= Convert.ToDecimal(txtAgency.Text))
+                else if (Convert.ToDecimal(txtBase.Text) < Convert.ToDecimal(txtAgency.Text))
                 {
-                    lblErrorAgencyCommission.Visible = true;
-                    lblErrorBasePrice.Visible = true;
-                    lblAgencyError.Text = "Agency Commission cannot be greater than or equal to the Base price";
+                    lblErrorAgencyCommission.Visible = false;
+                    lblAgencyError.Text = "Agency Commission cannot be greater than the Base price";
                 }
                 else
                 {
-                    lblErrorAgencyCommission.Visible = false;
-                    
+                    lblErrorAgencyCommission.Visible = true;
+                    lblErrorBasePrice.Visible = true;
                     lblAgencyError.Text = "";
                 }
             }
