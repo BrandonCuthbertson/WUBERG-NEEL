@@ -148,23 +148,23 @@ namespace Workshop2_TravelExperts {
             return ProductId;
         }
 
-        public static int AddSuppliers(Su suppliers)
+        public static int AddSuppliers(Suppliers suppliers)
         {
-            int ProductId = -1;
+            int SupplierId = -1;
             using (SqlConnection conn = TravelExpertsDB.GetConnection())
             {
-                string Query = "INSERT INTO Products(ProdName) " +
-                    " OUTPUT inserted.ProductId " +
-                    "VALUES(@ProdName)";
+                string Query = "INSERT INTO Suppliers(SupName) " +
+                    " OUTPUT inserted.SupplierId " +
+                    "VALUES(@SupName)";
 
                 using (SqlCommand cmd = new SqlCommand(Query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@ProdName", prod.ProdName);
+                    cmd.Parameters.AddWithValue("@SupName", suppliers.SupName);
                     conn.Open();
-                    ProductId = (int)cmd.ExecuteScalar();
+                    SupplierId = (int)cmd.ExecuteScalar();
                 }
             }
-            return ProductId;
+            return SupplierId;
         }
 
 
