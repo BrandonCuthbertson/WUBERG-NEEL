@@ -213,7 +213,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Workshop2_TravelExperts.Properties.Resources.Background;
-            this.ClientSize = new System.Drawing.Size(838, 633);
+            this.ClientSize = new System.Drawing.Size(712, 403);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dtpEnd);
             this.Controls.Add(this.dtpStart);
