@@ -137,7 +137,6 @@ namespace Workshop2_TravelExperts {
                 string Query = "INSERT INTO Products(ProdName) " +
                     " OUTPUT inserted.ProductId " +
                     "VALUES(@ProdName)";
-
                 using (SqlCommand cmd = new SqlCommand(Query, conn))
                 {
                     cmd.Parameters.AddWithValue("@ProdName", prod.ProdName);
@@ -147,19 +146,16 @@ namespace Workshop2_TravelExperts {
             }
             return ProductId;
         }
-
         public static int AddSuppliers(Suppliers suppliers)
         {
             int SupplierId = -1;
             using (SqlConnection conn = TravelExpertsDB.GetConnection())
             {
                 string Query = "INSERT INTO Suppliers(SupName) " +
-                    "Output inserted.SupplierId " +
+                    "OUTPUT inserted.SupplierId " +
                     "VALUES(@SupName)";
-
                 using (SqlCommand cmd = new SqlCommand(Query, conn))
                 {
-                   // cmd.Parameters.AddWithValue("@SupplierId", suppliers.SupplierId);
                     cmd.Parameters.AddWithValue("@SupName", suppliers.SupName);
                     conn.Open();
                     SupplierId = (int)cmd.ExecuteScalar();
@@ -167,9 +163,6 @@ namespace Workshop2_TravelExperts {
             }
             return SupplierId;
         }
-
-
-
     } // end class
    
 }
