@@ -154,11 +154,12 @@ namespace Workshop2_TravelExperts {
             using (SqlConnection conn = TravelExpertsDB.GetConnection())
             {
                 string Query = "INSERT INTO Suppliers(SupName) " +
-                    " OUTPUT inserted.SupplierId " +
+                    "Output inserted.SupplierId " +
                     "VALUES(@SupName)";
 
                 using (SqlCommand cmd = new SqlCommand(Query, conn))
                 {
+                   // cmd.Parameters.AddWithValue("@SupplierId", suppliers.SupplierId);
                     cmd.Parameters.AddWithValue("@SupName", suppliers.SupName);
                     conn.Open();
                     SupplierId = (int)cmd.ExecuteScalar();

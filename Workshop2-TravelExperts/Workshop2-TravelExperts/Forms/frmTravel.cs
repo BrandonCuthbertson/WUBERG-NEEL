@@ -164,5 +164,11 @@ namespace Workshop2_TravelExperts
             frmAddProduct addProduct = new frmAddProduct();
             DialogResult result = addProduct.ShowDialog();
         }
+
+        private void btnAddSup_Click(object sender, EventArgs e)
+        {
+            frmAdding_New_Suppliers new_Suppliers = new frmAdding_New_Suppliers();
+            DialogResult result = new_Suppliers.ShowDialog();
+        }
     }
 }

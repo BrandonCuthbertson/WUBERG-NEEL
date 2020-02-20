@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adding New Suppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adding New Suppliers.Designer.cs">
+      <DependentUpon>Adding New Suppliers.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Database IO\TravelExpertsDB.cs" />
     <Compile Include="Validator.cs" />
+    <EmbeddedResource Include="Adding New Suppliers.resx">
+      <DependentUpon>Adding New Suppliers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </EmbeddedResource>
