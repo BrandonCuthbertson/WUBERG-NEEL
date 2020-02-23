@@ -72,10 +72,7 @@ namespace Workshop2_TravelExperts
             this.Close();
         }
 
-        private void lblName_Click(object sender, EventArgs e)
-        {
-
-        }
+   
 
     }
 }

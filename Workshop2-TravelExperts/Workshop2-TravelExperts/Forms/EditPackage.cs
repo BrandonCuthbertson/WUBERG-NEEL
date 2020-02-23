@@ -156,9 +156,9 @@ namespace Workshop2_TravelExperts {
             dtpStart.Text = Convert.ToString(package.PkgStartDate);
             dtpEnd.Text = Convert.ToString(package.PkgEndDate);
             txtDesc.Text = package.PkgDesc;
-            txtBase.Text = Convert.ToString(package.PkgBasePrice);
-
-            txtAgency.Text = Convert.ToString(package.PkgAgencyCommission);
+            txtBase.Text = (package.PkgBasePrice).ToString("#,0.00");
+          
+            txtAgency.Text = (package.PkgAgencyCommission).ToString("#,0.00");
         }
         private void btnBack_Click(object sender, EventArgs e) { //Added by BC
             this.Close();

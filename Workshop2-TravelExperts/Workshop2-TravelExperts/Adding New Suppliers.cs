@@ -16,11 +16,14 @@ namespace Workshop2_TravelExperts
         public frmAdding_New_Suppliers()
         {
             InitializeComponent();
+            ErrorBoxSup.Visible = false;
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            supp = new Suppliers();
+            if(Validator.IsPresent(txtSup, "Suppliers")==true) //neels code
+            {
+                supp = new Suppliers();
             this.PutSuppliers(supp);
             try
             {
@@ -32,6 +35,13 @@ namespace Workshop2_TravelExperts
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
             Application.Restart();
+            }
+            else
+            {
+                ErrorBoxSup.Visible = true;
+                lblError.Text = "Please insert a Supplier Name";
+            }
+            
         }
 
         private void PutSuppliers(Suppliers suppliers)
@@ -42,6 +52,11 @@ namespace Workshop2_TravelExperts
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtSup.Text = "";
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

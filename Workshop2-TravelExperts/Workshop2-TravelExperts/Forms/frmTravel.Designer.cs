@@ -170,7 +170,7 @@
             // 
             this.btnAddNew.BackColor = System.Drawing.Color.DimGray;
             this.btnAddNew.ForeColor = System.Drawing.Color.White;
-            this.btnAddNew.Location = new System.Drawing.Point(421, 161);
+            this.btnAddNew.Location = new System.Drawing.Point(419, 251);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(251, 33);
             this.btnAddNew.TabIndex = 15;
@@ -251,7 +251,7 @@
             // btnAddingProd
             // 
             this.btnAddingProd.BackColor = System.Drawing.Color.DimGray;
-            this.btnAddingProd.Location = new System.Drawing.Point(421, 210);
+            this.btnAddingProd.Location = new System.Drawing.Point(419, 210);
             this.btnAddingProd.Name = "btnAddingProd";
             this.btnAddingProd.Size = new System.Drawing.Size(251, 35);
             this.btnAddingProd.TabIndex = 22;
@@ -262,9 +262,9 @@
             // btnAddSup
             // 
             this.btnAddSup.BackColor = System.Drawing.Color.DimGray;
-            this.btnAddSup.Location = new System.Drawing.Point(421, 255);
+            this.btnAddSup.Location = new System.Drawing.Point(419, 156);
             this.btnAddSup.Name = "btnAddSup";
-            this.btnAddSup.Size = new System.Drawing.Size(251, 35);
+            this.btnAddSup.Size = new System.Drawing.Size(253, 35);
             this.btnAddSup.TabIndex = 23;
             this.btnAddSup.Text = "Add Suppliers";
             this.btnAddSup.UseVisualStyleBackColor = false;

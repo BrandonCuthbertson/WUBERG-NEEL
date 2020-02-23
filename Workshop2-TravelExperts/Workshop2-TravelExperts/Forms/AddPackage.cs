@@ -179,5 +179,10 @@ namespace Workshop2_TravelExperts
             //lblErrorBasePrice.Text = "";
             //lblErrorAgency.Text = "";
         }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

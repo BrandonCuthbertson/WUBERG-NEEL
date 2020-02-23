@@ -138,6 +138,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(322, 32);
             this.txtName.TabIndex = 6;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // txtDesc
             // 

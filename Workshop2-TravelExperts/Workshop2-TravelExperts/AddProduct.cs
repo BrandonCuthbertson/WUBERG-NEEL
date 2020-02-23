@@ -16,10 +16,13 @@ namespace Workshop2_TravelExperts
         public frmAddProduct()
         {
             InitializeComponent();
+            ErrorBox.Visible = false;
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            if (Validator.IsPresent(txtName, "Product Name") == true)
+            {
             prod = new Products();
             this.PutProducts(prod);
             try
@@ -32,6 +35,13 @@ namespace Workshop2_TravelExperts
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
             Application.Restart();
+            }
+            else
+            {
+                ErrorBox.Visible = true;
+                lblError.Text = "Please insert a valid Product Name";
+            }
+            
         }
 
         private void PutProducts(Products products)
@@ -42,6 +52,11 @@ namespace Workshop2_TravelExperts
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtName.Text = "";
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

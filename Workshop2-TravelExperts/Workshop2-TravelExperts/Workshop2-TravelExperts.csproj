@@ -122,6 +122,22 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Forms\ToAddProduct.resx" />
+    <None Include="Properties\DataSources\AddPackage.datasource" />
+    <None Include="Properties\DataSources\DBO.datasource" />
+    <None Include="Properties\DataSources\EditPackage.datasource" />
+    <None Include="Properties\DataSources\frmAdding_New_Suppliers.datasource" />
+    <None Include="Properties\DataSources\frmAddProduct.datasource" />
+    <None Include="Properties\DataSources\FrmTravel.datasource" />
+    <None Include="Properties\DataSources\Packages.datasource" />
+    <None Include="Properties\DataSources\Packages_Products_Suppliers.datasource" />
+    <None Include="Properties\DataSources\Products.datasource" />
+    <None Include="Properties\DataSources\Products_Suppliers.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\Suppliers.datasource" />
+    <None Include="Properties\DataSources\ToAddProduct.datasource" />
+    <None Include="Properties\DataSources\TravelExpertsDB.datasource" />
+    <None Include="Properties\DataSources\TravelExpertsDBCon.datasource" />
+    <None Include="Properties\DataSources\Validator.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
