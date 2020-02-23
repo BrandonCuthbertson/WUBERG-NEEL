@@ -129,5 +129,40 @@ namespace Workshop2_TravelExperts {
             return (count > 0);
         }
 
+        public static int AddProduct(Products prod)
+        {
+            int ProductId = -1;
+            using (SqlConnection conn = TravelExpertsDB.GetConnection())
+            {
+                string Query = "INSERT INTO Products(ProdName) " +
+                    " OUTPUT inserted.ProductId " +
+                    "VALUES(@ProdName)";
+                using (SqlCommand cmd = new SqlCommand(Query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ProdName", prod.ProdName);
+                    conn.Open();
+                    ProductId = (int)cmd.ExecuteScalar();
+                }
+            }
+            return ProductId;
+        }
+        public static int AddSuppliers(Suppliers suppliers)
+        {
+            int SupplierId = -1;
+            using (SqlConnection conn = TravelExpertsDB.GetConnection())
+            {
+                string Query = "INSERT INTO Suppliers(SupName) " +
+                    "OUTPUT inserted.SupplierId " +
+                    "VALUES(@SupName)";
+                using (SqlCommand cmd = new SqlCommand(Query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@SupName", suppliers.SupName);
+                    conn.Open();
+                    SupplierId = (int)cmd.ExecuteScalar();
+                }
+            }
+            return SupplierId;
+        }
     } // end class
+   
 }

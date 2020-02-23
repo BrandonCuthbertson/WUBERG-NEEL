@@ -55,16 +55,16 @@ namespace Workshop2_TravelExperts
         {
             //products = new Products();
             //this.PutProduct(products);
-            int packageID = Convert.ToInt32(lblPackId.Text);
-            int prodID = products[cmbProducts.SelectedIndex].ProductID;
-            if (DBO.AddProdToPackage(prodID, packageID)) {
+            int packageId = Convert.ToInt32(lblPackId.Text);
+            int prodID = products[cmbProducts.SelectedIndex].ProductId;
+            if (DBO.AddProdToPackage(prodID, packageId)) {
                 this.DialogResult = DialogResult.OK;
                 Application.Restart();//You have to reload the form when you sub
             }
         }
         public void PutProduct(Products prods)
         {
-            prods.ProductID = Convert.ToInt32(cmbProducts.SelectedValue);
+            prods.ProductId = Convert.ToInt32(cmbProducts.SelectedValue);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -76,5 +76,6 @@ namespace Workshop2_TravelExperts
         {
 
         }
+
     }
 }

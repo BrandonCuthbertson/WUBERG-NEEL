@@ -44,6 +44,8 @@
             this.lblStart = new System.Windows.Forms.Label();
             this.lblEnd = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnAddingProd = new System.Windows.Forms.Button();
+            this.btnAddSup = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmbPackages
@@ -246,6 +248,28 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnAddingProd
+            // 
+            this.btnAddingProd.BackColor = System.Drawing.Color.DimGray;
+            this.btnAddingProd.Location = new System.Drawing.Point(421, 210);
+            this.btnAddingProd.Name = "btnAddingProd";
+            this.btnAddingProd.Size = new System.Drawing.Size(251, 35);
+            this.btnAddingProd.TabIndex = 22;
+            this.btnAddingProd.Text = "Adding new Product";
+            this.btnAddingProd.UseVisualStyleBackColor = false;
+            this.btnAddingProd.Click += new System.EventHandler(this.btnAddingProd_Click);
+            // 
+            // btnAddSup
+            // 
+            this.btnAddSup.BackColor = System.Drawing.Color.DimGray;
+            this.btnAddSup.Location = new System.Drawing.Point(421, 255);
+            this.btnAddSup.Name = "btnAddSup";
+            this.btnAddSup.Size = new System.Drawing.Size(251, 35);
+            this.btnAddSup.TabIndex = 23;
+            this.btnAddSup.Text = "Add Suppliers";
+            this.btnAddSup.UseVisualStyleBackColor = false;
+            this.btnAddSup.Click += new System.EventHandler(this.btnAddSup_Click);
+            // 
             // FrmTravel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
@@ -254,6 +278,8 @@
             this.BackgroundImage = global::Workshop2_TravelExperts.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(704, 411);
+            this.Controls.Add(this.btnAddSup);
+            this.Controls.Add(this.btnAddingProd);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblEnd);
             this.Controls.Add(this.lblStart);
@@ -312,6 +338,8 @@
         private System.Windows.Forms.Label lblStart;
         private System.Windows.Forms.Label lblEnd;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddingProd;
+        private System.Windows.Forms.Button btnAddSup;
     }
 }
 

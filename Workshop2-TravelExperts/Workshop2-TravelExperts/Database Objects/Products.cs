@@ -10,7 +10,7 @@ using System.Threading.Tasks;
  */
 namespace Workshop2_TravelExperts {
     public class Products {
-        public int ProductID { get; set; }
+        public int ProductId { get; set; }
         public string ProdName { get; set; }
     }
 }

@@ -44,7 +44,6 @@ C:\Users\826725\Documents\GitHub\WUBERG-NEEL\Workshop2-TravelExperts\Workshop2-T
 C:\Users\826725\Documents\GitHub\WUBERG-NEEL\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2-TravelExperts.csproj.GenerateResource.cache
 C:\Users\826725\Documents\GitHub\WUBERG-NEEL\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2-TravelExperts.exe
 C:\Users\826725\Documents\GitHub\WUBERG-NEEL\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2-TravelExperts.pdb
-C:\Users\826725\Documents\GitHub\WUBERG-NEEL\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2-TravelExperts.csprojAssemblyReference.cache
 C:\Users\840434\Documents\GitHub\WUBERG-NEEL\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2_TravelExperts.AddPackage.resources
 C:\Users\840434\Documents\GitHub\WUBERG-NEEL\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2_TravelExperts.EditPackage.resources
 C:\Users\840434\Documents\GitHub\WUBERG-NEEL\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2_TravelExperts.FrmTravel.resources
@@ -57,3 +56,6 @@ C:\Users\840434\Documents\GitHub\WUBERG-NEEL\Workshop2-TravelExperts\Workshop2-T
 C:\Users\840434\Documents\GitHub\WUBERG-NEEL\Workshop2-TravelExperts\Workshop2-TravelExperts\bin\Debug\Workshop2-TravelExperts.exe
 C:\Users\840434\Documents\GitHub\WUBERG-NEEL\Workshop2-TravelExperts\Workshop2-TravelExperts\bin\Debug\Workshop2-TravelExperts.pdb
 C:\Users\840434\Documents\GitHub\WUBERG-NEEL\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2-TravelExperts.csprojAssemblyReference.cache
+C:\Users\826725\Documents\GitHub\WUBERG-NEEL\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2-TravelExperts.csprojAssemblyReference.cache
+C:\Users\826725\Documents\GitHub\WUBERG-NEEL\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2_TravelExperts.frmAddProduct.resources
+C:\Users\826725\Documents\GitHub\WUBERG-NEEL\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2_TravelExperts.frmAdding_New_Suppliers.resources
