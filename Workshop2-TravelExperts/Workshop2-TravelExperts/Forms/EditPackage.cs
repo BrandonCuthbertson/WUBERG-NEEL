@@ -75,7 +75,7 @@ namespace Workshop2_TravelExperts {
                     lblErrorPackageName.Visible = false;
                     lblErrorNameMassage.Text = "";
                 }
-                
+                ////////////////////////////////////////////////////////////////
                 if (dtpStart.Value > dtpEnd.Value) //Date Error Start is > End
                 {
                     lblDateError.Text = "Start Date must be after End Date";
@@ -94,7 +94,7 @@ namespace Workshop2_TravelExperts {
                     lblErrorStart.Visible = false;
                     lblErrorEnd.Visible = false;
                 }
-                
+                ////////////////////////////////////////////////////////////////
                 if (Validator.IsPresent(txtDesc, "Description") == false)//Description Error
                 {
                     lblDescError.Text = "Please insert a description";
@@ -105,7 +105,7 @@ namespace Workshop2_TravelExperts {
                     lblDescError.Text = "";
                     lblErrorPackageDesc.Visible = false;
                 }
-
+                ////////////////////////////////////////////////////////////////
                 if (Validator.IsDecimal(txtBase, "Base Price") == false) //Base Price Error
                 {
                     lblErrorBasePrice.Visible = true;
@@ -121,7 +121,7 @@ namespace Workshop2_TravelExperts {
                     lblErrorBasePrice.Visible = false;
                     lblBaseError.Text = "";
                 }
-
+                ////////////////////////////////////////////////////////////////
                 if (Validator.IsDecimal(txtAgency, "Agency Commission") == false )//commison error
                 {
                     lblErrorAgencyCommission.Visible = true;
@@ -146,6 +146,7 @@ namespace Workshop2_TravelExperts {
                     
                     lblAgencyError.Text = "";
                 }
+                ////////////////////////////////////////////////////////////////
             }
             /* */
         }
