@@ -1,5 +1,5 @@
 +========+
-|Brandon |
+|Brandon | The Charming Gremlin
 +========+
 -Form Stylization (logo background ext)
 	- Add Packages
@@ -17,9 +17,9 @@
 	- ToAddProducts
 	- Adding New Supplier
 	- AddProducts
-
+-Currency Formatting
 +========+
-|  Neel  |
+|  Neel  | The Champ
 +========+
 -Form Creation
 	- Add Packages
@@ -29,7 +29,7 @@
 	- Adding New Supplier
 	- AddProducts
 +========+
-| Sarah  |
+| Sarah  | The Brains of This Operation
 +========+
 - Database Creation
 	Database IO
