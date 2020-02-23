@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace Workshop2_TravelExperts
     public partial class frmAdding_New_Suppliers : Form
     {
         Suppliers supp;
+        List<Suppliers> suppliers;
         public frmAdding_New_Suppliers()
         {
             InitializeComponent();
@@ -57,6 +59,23 @@ namespace Workshop2_TravelExperts
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmAdding_New_Suppliers_Load(object sender, EventArgs e)
+        {
+            SQLAdapter.SQLAdapter.GetFromDB(out suppliers, new TravelExpertsDBCon());
+            this.FillData();
+        }
+        private void FillData()
+        {
+            try
+            {
+                dgvSupp.DataSource = suppliers;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString()); ;
+            }
         }
     }
 }

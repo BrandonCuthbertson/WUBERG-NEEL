@@ -13,6 +13,7 @@ namespace Workshop2_TravelExperts
     public partial class frmAddProduct : Form
     {
         Products prod;
+        List<Products> products;
         public frmAddProduct()
         {
             InitializeComponent();
@@ -23,25 +24,25 @@ namespace Workshop2_TravelExperts
         {
             if (Validator.IsPresent(txtName, "Product Name") == true)
             {
-            prod = new Products();
-            this.PutProducts(prod);
-            try
-            {
-                prod.ProductId = TravelExpertsDB.AddProduct(prod);
-                this.DialogResult = DialogResult.OK;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
-            }
-            Application.Restart();
+                prod = new Products();
+                this.PutProducts(prod);
+                try
+                {
+                    prod.ProductId = TravelExpertsDB.AddProduct(prod);
+                    this.DialogResult = DialogResult.OK;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                }
+                Application.Restart();
             }
             else
             {
                 ErrorBox.Visible = true;
                 lblError.Text = "Please insert a valid Product Name";
             }
-            
+
         }
 
         private void PutProducts(Products products)
@@ -57,6 +58,24 @@ namespace Workshop2_TravelExperts
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmAddProduct_Load(object sender, EventArgs e)
+        {
+            SQLAdapter.SQLAdapter.GetFromDB(out products, new TravelExpertsDBCon());
+            this.FillData();
+        }
+        private void FillData()
+        {
+            try
+            {
+                dgvProds.DataSource = products;
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString()); ;
+            }
         }
     }
 }

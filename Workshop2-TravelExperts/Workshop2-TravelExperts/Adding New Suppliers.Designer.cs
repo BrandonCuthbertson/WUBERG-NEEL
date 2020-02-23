@@ -36,6 +36,8 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.ErrorBoxSup = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
+            this.dgvSupp = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSupp)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -65,7 +67,7 @@
             // 
             this.btnSubmit.BackColor = System.Drawing.Color.DimGray;
             this.btnSubmit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSubmit.Location = new System.Drawing.Point(198, 81);
+            this.btnSubmit.Location = new System.Drawing.Point(260, 296);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(174, 31);
@@ -78,7 +80,7 @@
             // 
             this.btnClear.BackColor = System.Drawing.Color.DimGray;
             this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnClear.Location = new System.Drawing.Point(374, 81);
+            this.btnClear.Location = new System.Drawing.Point(452, 296);
             this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(174, 31);
@@ -91,7 +93,7 @@
             // 
             this.btnBack.BackColor = System.Drawing.Color.DimGray;
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(17, 81);
+            this.btnBack.Location = new System.Drawing.Point(69, 297);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(174, 31);
             this.btnBack.TabIndex = 20;
@@ -118,12 +120,23 @@
             this.lblError.Size = new System.Drawing.Size(0, 21);
             this.lblError.TabIndex = 28;
             // 
+            // dgvSupp
+            // 
+            this.dgvSupp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSupp.Location = new System.Drawing.Point(17, 81);
+            this.dgvSupp.Name = "dgvSupp";
+            this.dgvSupp.RowHeadersWidth = 51;
+            this.dgvSupp.RowTemplate.Height = 24;
+            this.dgvSupp.Size = new System.Drawing.Size(320, 197);
+            this.dgvSupp.TabIndex = 29;
+            // 
             // frmAdding_New_Suppliers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Workshop2_TravelExperts.Properties.Resources.Background;
-            this.ClientSize = new System.Drawing.Size(561, 122);
+            this.ClientSize = new System.Drawing.Size(655, 340);
+            this.Controls.Add(this.dgvSupp);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnClear);
@@ -136,6 +149,8 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAdding_New_Suppliers";
             this.Text = "Adding_New_Suppliers";
+            this.Load += new System.EventHandler(this.frmAdding_New_Suppliers_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSupp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,5 +165,6 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label ErrorBoxSup;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.DataGridView dgvSupp;
     }
 }
