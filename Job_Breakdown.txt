@@ -1,0 +1,44 @@
++========+
+|Brandon |
++========+
+-Form Stylization (logo background ext)
+	- Add Packages
+	- Edit packages
+	- frmTravel
+	- ToAddProducts
+	- Adding New Supplier
+	- AddProducts
+-Images
+-Form Validation
+	-Validator.cs
+	- Add Packages
+	- Edit packages
+	- frmTravel
+	- ToAddProducts
+	- Adding New Supplier
+	- AddProducts
+
++========+
+|  Neel  |
++========+
+-Form Creation
+	- Add Packages
+	- Edit packages
+	- frmTravel
+	- ToAddProducts
+	- Adding New Supplier
+	- AddProducts
++========+
+| Sarah  |
++========+
+- Database Creation
+	Database IO
+		-DBO.cs
+		-SQLAdapter.cs
+		-TravelExpertsDB.cs
+	Database Objects
+		-Packages.cs
+		-Packages_Products_Suppliers.cs
+		-Products.cs
+		-Products_Suppliers.cs
+		-Suppliers.cs
