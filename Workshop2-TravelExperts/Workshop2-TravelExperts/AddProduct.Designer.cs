@@ -44,7 +44,7 @@
             // 
             this.txtName.BackColor = System.Drawing.Color.Black;
             this.txtName.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtName.Location = new System.Drawing.Point(193, 22);
+            this.txtName.Location = new System.Drawing.Point(170, 22);
             this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(323, 32);
@@ -54,7 +54,7 @@
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(13, 20);
+            this.label1.Location = new System.Drawing.Point(-10, 20);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(225, 34);
@@ -66,7 +66,7 @@
             // 
             this.btnSubmit.BackColor = System.Drawing.Color.DimGray;
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(301, 353);
+            this.btnSubmit.Location = new System.Drawing.Point(500, 57);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(174, 31);
             this.btnSubmit.TabIndex = 2;
@@ -78,7 +78,7 @@
             // 
             this.btnClear.BackColor = System.Drawing.Color.DimGray;
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(497, 353);
+            this.btnClear.Location = new System.Drawing.Point(500, 18);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(174, 31);
             this.btnClear.TabIndex = 3;
@@ -90,7 +90,7 @@
             // 
             this.btnBack.BackColor = System.Drawing.Color.DimGray;
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(105, 353);
+            this.btnBack.Location = new System.Drawing.Point(504, 280);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(174, 31);
             this.btnBack.TabIndex = 21;
@@ -101,7 +101,7 @@
             // ErrorBox
             // 
             this.ErrorBox.BackColor = System.Drawing.Color.Red;
-            this.ErrorBox.Location = new System.Drawing.Point(188, 18);
+            this.ErrorBox.Location = new System.Drawing.Point(165, 18);
             this.ErrorBox.Name = "ErrorBox";
             this.ErrorBox.Size = new System.Drawing.Size(333, 36);
             this.ErrorBox.TabIndex = 23;
@@ -112,7 +112,7 @@
             this.lblError.BackColor = System.Drawing.Color.Transparent;
             this.lblError.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(192, 57);
+            this.lblError.Location = new System.Drawing.Point(169, 57);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(0, 21);
             this.lblError.TabIndex = 29;
@@ -120,11 +120,11 @@
             // dgvProds
             // 
             this.dgvProds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProds.Location = new System.Drawing.Point(29, 82);
+            this.dgvProds.Location = new System.Drawing.Point(169, 61);
             this.dgvProds.Name = "dgvProds";
             this.dgvProds.RowHeadersWidth = 51;
             this.dgvProds.RowTemplate.Height = 24;
-            this.dgvProds.Size = new System.Drawing.Size(359, 250);
+            this.dgvProds.Size = new System.Drawing.Size(329, 250);
             this.dgvProds.TabIndex = 30;
             // 
             // frmAddProduct
@@ -132,7 +132,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Workshop2_TravelExperts.Properties.Resources.Background;
-            this.ClientSize = new System.Drawing.Size(694, 396);
+            this.ClientSize = new System.Drawing.Size(694, 326);
             this.Controls.Add(this.dgvProds);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnBack);

@@ -67,7 +67,7 @@
             // 
             this.btnSubmit.BackColor = System.Drawing.Color.DimGray;
             this.btnSubmit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSubmit.Location = new System.Drawing.Point(260, 296);
+            this.btnSubmit.Location = new System.Drawing.Point(498, 64);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(174, 31);
@@ -80,7 +80,7 @@
             // 
             this.btnClear.BackColor = System.Drawing.Color.DimGray;
             this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnClear.Location = new System.Drawing.Point(452, 296);
+            this.btnClear.Location = new System.Drawing.Point(498, 25);
             this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(174, 31);
@@ -93,7 +93,7 @@
             // 
             this.btnBack.BackColor = System.Drawing.Color.DimGray;
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(69, 297);
+            this.btnBack.Location = new System.Drawing.Point(497, 164);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(174, 31);
             this.btnBack.TabIndex = 20;
@@ -123,11 +123,11 @@
             // dgvSupp
             // 
             this.dgvSupp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSupp.Location = new System.Drawing.Point(17, 81);
+            this.dgvSupp.Location = new System.Drawing.Point(151, 81);
             this.dgvSupp.Name = "dgvSupp";
             this.dgvSupp.RowHeadersWidth = 51;
             this.dgvSupp.RowTemplate.Height = 24;
-            this.dgvSupp.Size = new System.Drawing.Size(320, 197);
+            this.dgvSupp.Size = new System.Drawing.Size(340, 114);
             this.dgvSupp.TabIndex = 29;
             // 
             // frmAdding_New_Suppliers
@@ -135,7 +135,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Workshop2_TravelExperts.Properties.Resources.Background;
-            this.ClientSize = new System.Drawing.Size(655, 340);
+            this.ClientSize = new System.Drawing.Size(683, 218);
             this.Controls.Add(this.dgvSupp);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnBack);
