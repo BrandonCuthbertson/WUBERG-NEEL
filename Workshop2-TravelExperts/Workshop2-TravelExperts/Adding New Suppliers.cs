@@ -26,15 +26,9 @@ namespace Workshop2_TravelExperts
             if (Validator.IsPresent(txtSup, "Suppliers") == true) //neels code
             {
                 supp = new Suppliers();
-                this.PutSuppliers(supp);
-                try
-                {
-                    supp.SupplierId = TravelExpertsDB.AddSuppliers(supp);
-                    this.DialogResult = DialogResult.OK;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                supp.SupName = txtSup.Text;
+                if( SQLAdapter.SQLAdapter.InsertToDB<Suppliers>(supp, new TravelExpertsDBCon()) ) {
+                    MessageBox.Show("Error Creating Supplier");
                 }
                 Application.Restart();
             }
@@ -45,12 +39,6 @@ namespace Workshop2_TravelExperts
             }
 
         }
-
-        private void PutSuppliers(Suppliers suppliers)
-        {
-            suppliers.SupName = txtSup.Text;
-        }
-
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtSup.Text = "";
