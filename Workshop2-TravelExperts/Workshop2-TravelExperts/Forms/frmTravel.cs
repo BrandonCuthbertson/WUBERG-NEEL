@@ -41,6 +41,10 @@ namespace Workshop2_TravelExperts {
                 cmbPackages.DataSource = packages;
                 cmbPackages.DisplayMember = "PkgName";
                 cmbPackages.ValueMember = "PackageId";
+
+                cboSuppliers.DataSource = suppliers;
+                cboSuppliers.DisplayMember = "SupName";
+                cboSuppliers.ValueMember = "SupplierId";
             }
             catch (Exception ex)
             {
@@ -62,6 +66,12 @@ namespace Workshop2_TravelExperts {
             lblPrice.Text = price.ToString("c");//Converts to currenct
             decimal Commision = decimal.Round(pack.PkgAgencyCommission, 2, MidpointRounding.AwayFromZero);
             lblCommision.Text = Commision.ToString("c");
+        }
+        private void DisplaySupplier()
+        {
+            Suppliers sup = new Suppliers();
+            int SupIndex = cboSuppliers.SelectedIndex;
+         
         }
         private void BtnAddNew_Click(object sender, EventArgs e)
         {
@@ -180,7 +190,7 @@ namespace Workshop2_TravelExperts {
             val = Convert.ToString(cboSuppliers.SelectedItem);
             if (val != null)
             {
-                this.DisplaySuppluer();
+                this.DisplaySupplier();
             }
             else
             {
@@ -188,11 +198,6 @@ namespace Workshop2_TravelExperts {
                 // Roll over and crash
             }
         }
-        private void DisplaySuppluer()
-        {
-            Suppliers sup = new Suppliers();
-            int SupIndex = cboSuppliers.SelectedIndex;
-            sup = suppliers[SupIndex];
-        }
+      
     }
 }

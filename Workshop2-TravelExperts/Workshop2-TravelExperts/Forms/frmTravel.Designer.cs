@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTravel));
             this.cmbPackages = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -56,11 +57,15 @@
             this.cmbProducts = new System.Windows.Forms.ComboBox();
             this.txtSuppliers = new System.Windows.Forms.Label();
             this.cboSuppliers = new System.Windows.Forms.ComboBox();
+            this.suppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productsSuppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabMain.SuspendLayout();
             this.tabPackages.SuspendLayout();
             this.TabSupp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProds)).BeginInit();
             this.pnl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsSuppliersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbPackages
@@ -345,9 +350,12 @@
             // 
             // dgvProds
             // 
+            this.dgvProds.AllowUserToAddRows = false;
+            this.dgvProds.AllowUserToDeleteRows = false;
             this.dgvProds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProds.Location = new System.Drawing.Point(8, 198);
             this.dgvProds.Name = "dgvProds";
+            this.dgvProds.ReadOnly = true;
             this.dgvProds.RowHeadersWidth = 51;
             this.dgvProds.RowTemplate.Height = 24;
             this.dgvProds.Size = new System.Drawing.Size(383, 153);
@@ -355,6 +363,7 @@
             // 
             // pnl1
             // 
+            this.pnl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl1.Controls.Add(this.btnAddProdtoSup);
             this.pnl1.Controls.Add(this.lblProduct);
             this.pnl1.Controls.Add(this.cmbProducts);
@@ -409,13 +418,25 @@
             // cboSuppliers
             // 
             this.cboSuppliers.BackColor = System.Drawing.Color.Black;
+            this.cboSuppliers.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.suppliersBindingSource, "SupplierId", true));
+            this.cboSuppliers.DataSource = this.suppliersBindingSource;
+            this.cboSuppliers.DisplayMember = "SupplierId";
             this.cboSuppliers.ForeColor = System.Drawing.SystemColors.Window;
             this.cboSuppliers.FormattingEnabled = true;
             this.cboSuppliers.Location = new System.Drawing.Point(158, 24);
             this.cboSuppliers.Name = "cboSuppliers";
             this.cboSuppliers.Size = new System.Drawing.Size(211, 32);
             this.cboSuppliers.TabIndex = 24;
+            this.cboSuppliers.ValueMember = "SupName";
             this.cboSuppliers.SelectedValueChanged += new System.EventHandler(this.cboSuppliers_SelectedValueChanged);
+            // 
+            // suppliersBindingSource
+            // 
+            this.suppliersBindingSource.DataSource = typeof(Workshop2_TravelExperts.Suppliers);
+            // 
+            // productsSuppliersBindingSource
+            // 
+            this.productsSuppliersBindingSource.DataSource = typeof(Workshop2_TravelExperts.Products_Suppliers);
             // 
             // FrmTravel
             // 
@@ -442,6 +463,8 @@
             this.TabSupp.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProds)).EndInit();
             this.pnl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsSuppliersBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -482,6 +505,8 @@
         private System.Windows.Forms.Label lblProduct;
         private System.Windows.Forms.Button btnAddProdtoSup;
         private System.Windows.Forms.DataGridView dgvProds;
+        private System.Windows.Forms.BindingSource suppliersBindingSource;
+        private System.Windows.Forms.BindingSource productsSuppliersBindingSource;
     }
 }
 
