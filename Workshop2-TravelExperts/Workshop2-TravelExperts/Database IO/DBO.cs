@@ -21,13 +21,13 @@ namespace Workshop2_TravelExperts {
             SQLAdapter.SQLAdapter.GetFromDB<Products_Suppliers>(out product_supplier, db, query);
             // Creating the DB object
             if (product_supplier.Count > 0) {
-                packageProductSupplier.ProductSupplierID = product_supplier[0].ProductSupplierID;
+                packageProductSupplier.ProductSupplierID = product_supplier[0].ProductSupplierId;
                 packageProductSupplier.PackageID = packageID;
             }
             else { 
                 success = false;
             }
-            if(!SQLAdapter.SQLAdapter.InsertToDBNOID<Packages_Products_Suppliers>(packageProductSupplier, db))
+            if(!SQLAdapter.SQLAdapter.InsertToDB<Packages_Products_Suppliers>(packageProductSupplier, db))
                 success = false;
             return success;
         }
