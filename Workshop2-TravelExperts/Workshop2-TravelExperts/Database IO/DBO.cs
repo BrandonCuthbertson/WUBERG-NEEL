@@ -16,24 +16,30 @@ namespace Workshop2_TravelExperts {
             Packages_Products_Suppliers packageProductSupplier = new Packages_Products_Suppliers();
             bool success = true;
             string query;
-
             // Getting the info from the db (assumes first option is correct, this is a big assumtion)
             query = "Select * from Products_Suppliers where ProductID = " + prodID;
             SQLAdapter.SQLAdapter.GetFromDB<Products_Suppliers>(out product_supplier, db, query);
-
             // Creating the DB object
             if (product_supplier.Count > 0) {
                 packageProductSupplier.ProductSupplierID = product_supplier[0].ProductSupplierID;
                 packageProductSupplier.PackageID = packageID;
             }
-            else { success = false; }
-
-            if(!SQLAdapter.SQLAdapter.InsertToDBNOID<Packages_Products_Suppliers>(packageProductSupplier, db)) success = false;
+            else { 
+                success = false;
+            }
+            if(!SQLAdapter.SQLAdapter.InsertToDBNOID<Packages_Products_Suppliers>(packageProductSupplier, db))
+                success = false;
             return success;
+        }
+        public static bool AddProdToSupplier(int prodID, int supplierID) {
+            Products_Suppliers pd = new Products_Suppliers();
+            pd.ProductId = prodID;
+            pd.SupplierId = supplierID;
+            return SQLAdapter.SQLAdapter.InsertToDB<Products_Suppliers>(pd, new TravelExpertsDBCon());
         }
     }
 
-    public class TravelExpertsDBCon : SQLDB {
+    public class TravelExpertsDBCon : I_SQLDB {
         public SqlConnection GetConnection() {
             string connectionString =
             @"Data Source=localhost\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
