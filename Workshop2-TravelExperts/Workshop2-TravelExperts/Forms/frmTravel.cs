@@ -47,7 +47,7 @@ namespace Workshop2_TravelExperts {
                 cmbPackages.DisplayMember = "PkgName";
                 cmbPackages.ValueMember = "PackageId";
                 cboSuppliers.DataSource = suppliers;
-                cboSuppliers.DisplayMember = "SuppName";
+                cboSuppliers.DisplayMember = "SupName";
                 cboSuppliers.ValueMember = "SupplierId";
                 cmbProducts.DataSource = products;
                 cmbProducts.DisplayMember = "ProdName";
