@@ -1,3 +1,5 @@
+Problems: We ran into significant problems with the github merging causing loss of work and the form not working on each computer even when it is the exact same copy. Also had issues with code duplication, and residual merrge conflicts.
+
 +========+
 |Brandon | The Charming Gremlin
 +========+

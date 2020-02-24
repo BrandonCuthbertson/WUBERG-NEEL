@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Workshop2_TravelExperts.Database_Objects;
 
-namespace Workshop2_TravelExperts {
+namespace Workshop2_TravelExperts
+{
     /// Program Jobs: 
     ///     Neel:
     ///         -Add/Edit Packages
@@ -24,7 +26,8 @@ namespace Workshop2_TravelExperts {
         List<Suppliers> suppliers;
         List<Products> products;
         public Packages Package;
-       
+
+
         public FrmTravel()
         {
             InitializeComponent();
@@ -37,8 +40,17 @@ namespace Workshop2_TravelExperts {
             this.LoadComboBox();
             dtpEnd.Visible = false;
             dtpStart.Visible = false;
-
+            string querier = "Select Products_Suppliers.ProductSupplierId, Suppliers.SupName, Products.ProdName " +
+                                "From Products_Suppliers, Products, Suppliers " +
+                                "where Products_Suppliers.ProductId = Products.ProductId and " +
+                                "Products_Suppliers.SupplierId = Suppliers.SupplierId " +
+                                "Order by Suppliers.SupName  ";
+            SQLAdapter.SQLAdapter.GetFromDB(out List<ProductSupplierProduct> psp, new TravelExpertsDBCon(), querier);
+            dgvProds.DataSource = psp;
         }
+
+
+
         private void LoadComboBox()
         {
             try
@@ -80,7 +92,7 @@ namespace Workshop2_TravelExperts {
         {
             Suppliers sup = new Suppliers();
             int SupIndex = cboSuppliers.SelectedIndex;
-         
+
         }
         private void BtnAddNew_Click(object sender, EventArgs e)
         {
@@ -216,5 +228,16 @@ namespace Workshop2_TravelExperts {
             dgvProds.DataSource = sup;
         }
 
+
+        private void btnAddProdtoSup_Click(object sender, EventArgs e)
+        {
+            
+          
+            Products_Suppliers ps = new Products_Suppliers();
+            ps.ProductId = products[cmbProducts.SelectedIndex].ProductId; 
+            ps.ProductSupplierId = suppliers[cboSuppliers.SelectedIndex].SupplierId;
+            SQLAdapter.SQLAdapter.InsertToDB<Products_Suppliers>(ps, new TravelExpertsDBCon());
+            Application.Restart();
+        }
     }
 }

@@ -384,6 +384,7 @@
             this.btnAddProdtoSup.TabIndex = 25;
             this.btnAddProdtoSup.Text = "Add &Product to Supplier";
             this.btnAddProdtoSup.UseVisualStyleBackColor = false;
+            this.btnAddProdtoSup.Click += new System.EventHandler(this.btnAddProdtoSup_Click);
             // 
             // lblProduct
             // 

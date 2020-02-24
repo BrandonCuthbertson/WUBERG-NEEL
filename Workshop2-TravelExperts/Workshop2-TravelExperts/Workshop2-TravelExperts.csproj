@@ -61,6 +61,7 @@
     <Compile Include="AddProduct.Designer.cs">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Database Objects\ProductSupplierProduct.cs" />
     <Compile Include="Database Objects\Suppliers.cs" />
     <Compile Include="Forms\AddPackage.cs">
       <SubType>Form</SubType>
