@@ -23,32 +23,32 @@ namespace Workshop2_TravelExperts
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if(Validator.IsPresent(txtSup, "Suppliers")==true) //neels code
+            if (Validator.IsPresent(txtSup, "Suppliers") == true) //neels code
             {
                 supp = new Suppliers();
-            this.PutSuppliers(supp);
-            try
-            {
-                supp.SupplierId = TravelExpertsDB.AddSuppliers(supp);
-                this.DialogResult = DialogResult.OK;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
-            }
-            Application.Restart();
+                this.PutSuppliers(supp);
+                try
+                {
+                    supp.SupplierId = TravelExpertsDB.AddSuppliers(supp);
+                    this.DialogResult = DialogResult.OK;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                }
+                Application.Restart();
             }
             else
             {
                 ErrorBoxSup.Visible = true;
                 lblError.Text = "Please insert a Supplier Name";
             }
-            
+
         }
 
         private void PutSuppliers(Suppliers suppliers)
         {
-            suppliers.SupName = txtSup.Text;       
+            suppliers.SupName = txtSup.Text;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
