@@ -12,6 +12,7 @@ namespace Workshop2_TravelExperts {
     /// Program Jobs: 
     ///     Neel:
     ///         -Add/Edit Packages
+    ///         -Adding Products,Suppliers
     ///  Brandon:
     ///         -Validation
     ///         -Gui layout
@@ -20,8 +21,10 @@ namespace Workshop2_TravelExperts {
     public partial class FrmTravel : Form
     {
         List<Packages> packages;
-        public Packages Package;
         List<Suppliers> suppliers;
+        List<Products> products;
+        public Packages Package;
+       
         public FrmTravel()
         {
             InitializeComponent();
@@ -29,6 +32,8 @@ namespace Workshop2_TravelExperts {
         private void FrmTravel_Load(object sender, EventArgs e)
         {
             SQLAdapter.SQLAdapter.GetFromDB(out packages, new TravelExpertsDBCon());
+            SQLAdapter.SQLAdapter.GetFromDB(out suppliers, new TravelExpertsDBCon());
+            SQLAdapter.SQLAdapter.GetFromDB(out products, new TravelExpertsDBCon());
             this.LoadComboBox();
             dtpEnd.Visible = false;
             dtpStart.Visible = false;
@@ -41,6 +46,12 @@ namespace Workshop2_TravelExperts {
                 cmbPackages.DataSource = packages;
                 cmbPackages.DisplayMember = "PkgName";
                 cmbPackages.ValueMember = "PackageId";
+                cboSuppliers.DataSource = suppliers;
+                cboSuppliers.DisplayMember = "SuppName";
+                cboSuppliers.ValueMember = "SupplierId";
+                cmbProducts.DataSource = products;
+                cmbProducts.DisplayMember = "ProdName";
+                cmbProducts.ValueMember = "ProductId";
             }
             catch (Exception ex)
             {
@@ -193,6 +204,7 @@ namespace Workshop2_TravelExperts {
             Suppliers sup = new Suppliers();
             int SupIndex = cboSuppliers.SelectedIndex;
             sup = suppliers[SupIndex];
+            dgvProds.DataSource = sup;
         }
     }
 }
