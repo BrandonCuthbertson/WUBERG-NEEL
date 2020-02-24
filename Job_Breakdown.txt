@@ -28,6 +28,7 @@
 	- ToAddProducts
 	- Adding New Supplier
 	- AddProducts
+-TravelExpertsDB.cs
 +========+
 | Sarah  | The Brains of This Operation
 +========+
@@ -35,10 +36,10 @@
 	Database IO
 		-DBO.cs
 		-SQLAdapter.cs
-		-TravelExpertsDB.cs
 	Database Objects
 		-Packages.cs
 		-Packages_Products_Suppliers.cs
 		-Products.cs
 		-Products_Suppliers.cs
 		-Suppliers.cs
+- Bug fixing and troubleshooting.
