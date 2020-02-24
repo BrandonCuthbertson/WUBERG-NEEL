@@ -128,7 +128,6 @@ namespace Workshop2_TravelExperts {
 
             return (count > 0);
         }
-
         public static int AddProduct(Products prod)
         {
             int ProductId = -1;

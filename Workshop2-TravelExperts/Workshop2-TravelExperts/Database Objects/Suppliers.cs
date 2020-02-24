@@ -8,7 +8,6 @@ namespace Workshop2_TravelExperts
 {
    public class Suppliers{
         public int SupplierId { get; set; }
-
         public string SupName { get; set; }
     }
 }
