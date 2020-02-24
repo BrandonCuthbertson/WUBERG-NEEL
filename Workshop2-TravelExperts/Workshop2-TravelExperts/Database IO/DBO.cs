@@ -27,7 +27,7 @@ namespace Workshop2_TravelExperts {
             else { 
                 success = false;
             }
-            if(!SQLAdapter.SQLAdapter.InsertToDBNOID<Packages_Products_Suppliers>(packageProductSupplier, db))
+            if(!SQLAdapter.SQLAdapter.InsertToDB<Packages_Products_Suppliers>(packageProductSupplier, db))
                 success = false;
             return success;
         }
