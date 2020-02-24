@@ -49,9 +49,18 @@
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabPackages = new System.Windows.Forms.TabPage();
             this.TabSupp = new System.Windows.Forms.TabPage();
+            this.cboSuppliers = new System.Windows.Forms.ComboBox();
+            this.txtSuppliers = new System.Windows.Forms.Label();
+            this.pnl1 = new System.Windows.Forms.Panel();
+            this.cmbProducts = new System.Windows.Forms.ComboBox();
+            this.lblProduct = new System.Windows.Forms.Label();
+            this.btnAddProdtoSup = new System.Windows.Forms.Button();
+            this.dgvProds = new System.Windows.Forms.DataGridView();
             this.tabMain.SuspendLayout();
             this.tabPackages.SuspendLayout();
             this.TabSupp.SuspendLayout();
+            this.pnl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProds)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbPackages
@@ -180,7 +189,7 @@
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(251, 33);
             this.btnAddNew.TabIndex = 15;
-            this.btnAddNew.Text = "&Add New Package";
+            this.btnAddNew.Text = "Add &New Package";
             this.btnAddNew.UseVisualStyleBackColor = false;
             this.btnAddNew.Click += new System.EventHandler(this.BtnAddNew_Click);
             // 
@@ -200,9 +209,9 @@
             // 
             this.btnQuit.BackColor = System.Drawing.Color.DimGray;
             this.btnQuit.ForeColor = System.Drawing.Color.White;
-            this.btnQuit.Location = new System.Drawing.Point(417, 412);
+            this.btnQuit.Location = new System.Drawing.Point(405, 411);
             this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(251, 30);
+            this.btnQuit.Size = new System.Drawing.Size(253, 30);
             this.btnQuit.TabIndex = 17;
             this.btnQuit.Text = "&Quit";
             this.btnQuit.UseVisualStyleBackColor = false;
@@ -257,22 +266,22 @@
             // btnAddingProd
             // 
             this.btnAddingProd.BackColor = System.Drawing.Color.DimGray;
-            this.btnAddingProd.Location = new System.Drawing.Point(415, 113);
+            this.btnAddingProd.Location = new System.Drawing.Point(401, 65);
             this.btnAddingProd.Name = "btnAddingProd";
             this.btnAddingProd.Size = new System.Drawing.Size(251, 35);
             this.btnAddingProd.TabIndex = 22;
-            this.btnAddingProd.Text = "&Adding New Product";
+            this.btnAddingProd.Text = "Adding New &Product";
             this.btnAddingProd.UseVisualStyleBackColor = false;
             this.btnAddingProd.Click += new System.EventHandler(this.btnAddingProd_Click_1);
             // 
             // btnAddSup
             // 
             this.btnAddSup.BackColor = System.Drawing.Color.DimGray;
-            this.btnAddSup.Location = new System.Drawing.Point(413, 72);
+            this.btnAddSup.Location = new System.Drawing.Point(401, 15);
             this.btnAddSup.Name = "btnAddSup";
             this.btnAddSup.Size = new System.Drawing.Size(253, 35);
             this.btnAddSup.TabIndex = 23;
-            this.btnAddSup.Text = "&Add Suppliers";
+            this.btnAddSup.Text = "Add &Suppliers";
             this.btnAddSup.UseVisualStyleBackColor = false;
             this.btnAddSup.Click += new System.EventHandler(this.btnAddSup_Click_1);
             // 
@@ -284,7 +293,7 @@
             this.tabMain.Location = new System.Drawing.Point(0, 0);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(706, 394);
+            this.tabMain.Size = new System.Drawing.Size(674, 394);
             this.tabMain.TabIndex = 24;
             // 
             // tabPackages
@@ -313,7 +322,7 @@
             this.tabPackages.Location = new System.Drawing.Point(4, 33);
             this.tabPackages.Name = "tabPackages";
             this.tabPackages.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPackages.Size = new System.Drawing.Size(698, 357);
+            this.tabPackages.Size = new System.Drawing.Size(666, 357);
             this.tabPackages.TabIndex = 0;
             this.tabPackages.Text = "Packages";
             this.tabPackages.UseVisualStyleBackColor = true;
@@ -321,6 +330,8 @@
             // TabSupp
             // 
             this.TabSupp.BackgroundImage = global::Workshop2_TravelExperts.Properties.Resources.Background;
+            this.TabSupp.Controls.Add(this.dgvProds);
+            this.TabSupp.Controls.Add(this.pnl1);
             this.TabSupp.Controls.Add(this.btnAddSup);
             this.TabSupp.Controls.Add(this.btnAddingProd);
             this.TabSupp.ForeColor = System.Drawing.Color.Transparent;
@@ -332,6 +343,79 @@
             this.TabSupp.Text = "Suppliers";
             this.TabSupp.UseVisualStyleBackColor = true;
             // 
+            // cboSuppliers
+            // 
+            this.cboSuppliers.BackColor = System.Drawing.Color.Black;
+            this.cboSuppliers.ForeColor = System.Drawing.SystemColors.Window;
+            this.cboSuppliers.FormattingEnabled = true;
+            this.cboSuppliers.Location = new System.Drawing.Point(158, 24);
+            this.cboSuppliers.Name = "cboSuppliers";
+            this.cboSuppliers.Size = new System.Drawing.Size(211, 32);
+            this.cboSuppliers.TabIndex = 24;
+            // 
+            // txtSuppliers
+            // 
+            this.txtSuppliers.BackColor = System.Drawing.Color.Transparent;
+            this.txtSuppliers.Location = new System.Drawing.Point(3, 24);
+            this.txtSuppliers.Name = "txtSuppliers";
+            this.txtSuppliers.Size = new System.Drawing.Size(149, 31);
+            this.txtSuppliers.TabIndex = 25;
+            this.txtSuppliers.Text = "Suppliers:  ";
+            this.txtSuppliers.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pnl1
+            // 
+            this.pnl1.Controls.Add(this.btnAddProdtoSup);
+            this.pnl1.Controls.Add(this.lblProduct);
+            this.pnl1.Controls.Add(this.cmbProducts);
+            this.pnl1.Controls.Add(this.txtSuppliers);
+            this.pnl1.Controls.Add(this.cboSuppliers);
+            this.pnl1.Location = new System.Drawing.Point(8, 6);
+            this.pnl1.Name = "pnl1";
+            this.pnl1.Size = new System.Drawing.Size(383, 186);
+            this.pnl1.TabIndex = 26;
+            // 
+            // cmbProducts
+            // 
+            this.cmbProducts.BackColor = System.Drawing.Color.Black;
+            this.cmbProducts.ForeColor = System.Drawing.SystemColors.Window;
+            this.cmbProducts.FormattingEnabled = true;
+            this.cmbProducts.Location = new System.Drawing.Point(158, 79);
+            this.cmbProducts.Name = "cmbProducts";
+            this.cmbProducts.Size = new System.Drawing.Size(211, 32);
+            this.cmbProducts.TabIndex = 25;
+            // 
+            // lblProduct
+            // 
+            this.lblProduct.BackColor = System.Drawing.Color.Transparent;
+            this.lblProduct.Location = new System.Drawing.Point(3, 80);
+            this.lblProduct.Name = "lblProduct";
+            this.lblProduct.Size = new System.Drawing.Size(149, 31);
+            this.lblProduct.TabIndex = 26;
+            this.lblProduct.Text = "Product: ";
+            this.lblProduct.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btnAddProdtoSup
+            // 
+            this.btnAddProdtoSup.BackColor = System.Drawing.Color.DimGray;
+            this.btnAddProdtoSup.ForeColor = System.Drawing.Color.White;
+            this.btnAddProdtoSup.Location = new System.Drawing.Point(118, 137);
+            this.btnAddProdtoSup.Name = "btnAddProdtoSup";
+            this.btnAddProdtoSup.Size = new System.Drawing.Size(251, 30);
+            this.btnAddProdtoSup.TabIndex = 25;
+            this.btnAddProdtoSup.Text = "Add &Product to Supplier";
+            this.btnAddProdtoSup.UseVisualStyleBackColor = false;
+            // 
+            // dgvProds
+            // 
+            this.dgvProds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProds.Location = new System.Drawing.Point(8, 198);
+            this.dgvProds.Name = "dgvProds";
+            this.dgvProds.RowHeadersWidth = 51;
+            this.dgvProds.RowTemplate.Height = 24;
+            this.dgvProds.Size = new System.Drawing.Size(383, 153);
+            this.dgvProds.TabIndex = 31;
+            // 
             // FrmTravel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
@@ -339,7 +423,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImage = global::Workshop2_TravelExperts.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(706, 453);
+            this.ClientSize = new System.Drawing.Size(674, 453);
             this.Controls.Add(this.tabMain);
             this.Controls.Add(this.btnQuit);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -355,6 +439,8 @@
             this.tabPackages.ResumeLayout(false);
             this.tabPackages.PerformLayout();
             this.TabSupp.ResumeLayout(false);
+            this.pnl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProds)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -388,6 +474,13 @@
         private System.Windows.Forms.TabControl tabMain;
         private System.Windows.Forms.TabPage tabPackages;
         private System.Windows.Forms.TabPage TabSupp;
+        private System.Windows.Forms.Panel pnl1;
+        private System.Windows.Forms.ComboBox cboSuppliers;
+        private System.Windows.Forms.Label txtSuppliers;
+        private System.Windows.Forms.ComboBox cmbProducts;
+        private System.Windows.Forms.Label lblProduct;
+        private System.Windows.Forms.Button btnAddProdtoSup;
+        private System.Windows.Forms.DataGridView dgvProds;
     }
 }
 
