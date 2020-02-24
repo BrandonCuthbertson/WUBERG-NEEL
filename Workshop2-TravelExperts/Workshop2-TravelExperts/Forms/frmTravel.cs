@@ -17,30 +17,38 @@ namespace Workshop2_TravelExperts {
     ///         -Gui layout
     ///    Sarah:
     ///         -Database Integration
-    public partial class FrmTravel : Form {
+    public partial class FrmTravel : Form
+    {
         List<Packages> packages;
         public Packages Package;
-        public FrmTravel() {
+        List<Suppliers> suppliers;
+        public FrmTravel()
+        {
             InitializeComponent();
         }
-        private void FrmTravel_Load(object sender, EventArgs e) {
+        private void FrmTravel_Load(object sender, EventArgs e)
+        {
             SQLAdapter.SQLAdapter.GetFromDB(out packages, new TravelExpertsDBCon());
             this.LoadComboBox();
             dtpEnd.Visible = false;
             dtpStart.Visible = false;
 
         }
-        private void LoadComboBox() {
-            try {
+        private void LoadComboBox()
+        {
+            try
+            {
                 cmbPackages.DataSource = packages;
                 cmbPackages.DisplayMember = "PkgName";
                 cmbPackages.ValueMember = "PackageId";
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message, ex.GetType().ToString()); ;
             }
         }
-        private void DisplayPacks() {
+        private void DisplayPacks()
+        {
             Packages pack = new Packages();
             int packIndex = cmbPackages.SelectedIndex;
             pack = packages[packIndex];
@@ -55,93 +63,136 @@ namespace Workshop2_TravelExperts {
             decimal Commision = decimal.Round(pack.PkgAgencyCommission, 2, MidpointRounding.AwayFromZero);
             lblCommision.Text = Commision.ToString("c");
         }
-        private void BtnAddNew_Click(object sender, EventArgs e) {
+        private void BtnAddNew_Click(object sender, EventArgs e)
+        {
             AddPackage addPackageform = new AddPackage();
             // addPackage.addPackage = true;
             DialogResult result = addPackageform.ShowDialog();
         }
-        private void btnEdit_Click(object sender, EventArgs e) {
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
             Packages pack = packages[cmbPackages.SelectedIndex];
             EditPackage editpackform = new EditPackage(pack);
             DialogResult result = editpackform.ShowDialog();
 
             editpackform.package = Package;
 
-            if (result == DialogResult.OK) {
+            if (result == DialogResult.OK)
+            {
                 Package = editpackform.package;
 
                 //this.DisplayPacks(p);
             }
-            else if (result == DialogResult.Retry) {
+            else if (result == DialogResult.Retry)
+            {
                 //this.GetPack(Package.PackageId);
-                if (Package != null) {
+                if (Package != null)
+                {
                     this.DisplayPacks();
                 }
-                else {
+                else
+                {
                     //this.ClearControls();
                 }
             }
         }
-        private void cmbPackages_SelectedValueChanged(object sender, EventArgs e) {//Removed Search Button for a removed index changed
+        private void cmbPackages_SelectedValueChanged(object sender, EventArgs e)
+        {//Removed Search Button for a removed index changed
             string val;
 
             val = Convert.ToString(cmbPackages.SelectedItem);
-            if (val != null) {
+            if (val != null)
+            {
                 this.DisplayPacks();
             }
-            else {
+            else
+            {
                 MessageBox.Show("Error\n Selected Value Error: VALUE NULL", "ERROR");
             }
         }
-        private void btnQuit_Click(object sender, EventArgs e) {//added by bc
+        private void btnQuit_Click(object sender, EventArgs e)
+        {//added by bc
             Close();
         }
-        private void cmbPackages_SelectedValueChanged_1(object sender, EventArgs e) {
+        private void cmbPackages_SelectedValueChanged_1(object sender, EventArgs e)
+        {
             string val;
             val = Convert.ToString(cmbPackages.SelectedItem);
-            if (val != null) {
+            if (val != null)
+            {
                 this.DisplayPacks();
             }
-            else {
+            else
+            {
                 MessageBox.Show("Error\n Selected Value Error: VALUE NULL", "ERROR");
                 // Roll over and crash
             }
         }
-        private void button1_Click(object sender, EventArgs e) {
+        private void button1_Click(object sender, EventArgs e)
+        {
             Packages pack = packages[cmbPackages.SelectedIndex];
             ToAddProduct addProduct = new ToAddProduct(pack);
             DialogResult result = addProduct.ShowDialog();
 
             addProduct.packages = Package;
-            if (result == DialogResult.OK) {
+            if (result == DialogResult.OK)
+            {
                 Package = addProduct.packages;
                 //this.DisplayPacks(p);
             }
-            else if (result == DialogResult.Retry) {
+            else if (result == DialogResult.Retry)
+            {
                 //this.GetPack(Package.PackageId);
-                if (Package != null) {
+                if (Package != null)
+                {
                     this.DisplayPacks();
                 }
-                else {
+                else
+                {
                     //this.ClearControls();
                 }
             }
         }
-        private void btnAddingProd_Click(object sender, EventArgs e) {
+        private void btnAddingProd_Click(object sender, EventArgs e)
+        {
             frmAddProduct addProduct = new frmAddProduct();
             DialogResult result = addProduct.ShowDialog();
         }
-        private void btnAddSup_Click(object sender, EventArgs e) {
+        private void btnAddSup_Click(object sender, EventArgs e)
+        {
             frmAdding_New_Suppliers new_Suppliers = new frmAdding_New_Suppliers();
             DialogResult result = new_Suppliers.ShowDialog();
         }
-        private void btnAddSup_Click_1(object sender, EventArgs e) {
+        private void btnAddSup_Click_1(object sender, EventArgs e)
+        {
             frmAdding_New_Suppliers new_Suppliers = new frmAdding_New_Suppliers();
             DialogResult result = new_Suppliers.ShowDialog();
         }
-        private void btnAddingProd_Click_1(object sender, EventArgs e) {
+        private void btnAddingProd_Click_1(object sender, EventArgs e)
+        {
             frmAddProduct addProduct = new frmAddProduct();
             DialogResult result = addProduct.ShowDialog();
+        }
+
+        private void cboSuppliers_SelectedValueChanged(object sender, EventArgs e) // display Suppliers
+        {
+            string val;
+            val = Convert.ToString(cboSuppliers.SelectedItem);
+            if (val != null)
+            {
+                this.DisplaySuppluer();
+            }
+            else
+            {
+                MessageBox.Show("Error\n Selected Value Error: VALUE NULL", "ERROR");
+                // Roll over and crash
+            }
+        }
+        private void DisplaySuppluer()
+        {
+            Suppliers sup = new Suppliers();
+            int SupIndex = cboSuppliers.SelectedIndex;
+            sup = suppliers[SupIndex];
         }
     }
 }

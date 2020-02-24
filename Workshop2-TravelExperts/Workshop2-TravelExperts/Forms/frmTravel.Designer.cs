@@ -49,18 +49,18 @@
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabPackages = new System.Windows.Forms.TabPage();
             this.TabSupp = new System.Windows.Forms.TabPage();
-            this.cboSuppliers = new System.Windows.Forms.ComboBox();
-            this.txtSuppliers = new System.Windows.Forms.Label();
-            this.pnl1 = new System.Windows.Forms.Panel();
-            this.cmbProducts = new System.Windows.Forms.ComboBox();
-            this.lblProduct = new System.Windows.Forms.Label();
-            this.btnAddProdtoSup = new System.Windows.Forms.Button();
             this.dgvProds = new System.Windows.Forms.DataGridView();
+            this.pnl1 = new System.Windows.Forms.Panel();
+            this.btnAddProdtoSup = new System.Windows.Forms.Button();
+            this.lblProduct = new System.Windows.Forms.Label();
+            this.cmbProducts = new System.Windows.Forms.ComboBox();
+            this.txtSuppliers = new System.Windows.Forms.Label();
+            this.cboSuppliers = new System.Windows.Forms.ComboBox();
             this.tabMain.SuspendLayout();
             this.tabPackages.SuspendLayout();
             this.TabSupp.SuspendLayout();
-            this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProds)).BeginInit();
+            this.pnl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbPackages
@@ -338,30 +338,20 @@
             this.TabSupp.Location = new System.Drawing.Point(4, 33);
             this.TabSupp.Name = "TabSupp";
             this.TabSupp.Padding = new System.Windows.Forms.Padding(3);
-            this.TabSupp.Size = new System.Drawing.Size(698, 357);
+            this.TabSupp.Size = new System.Drawing.Size(666, 357);
             this.TabSupp.TabIndex = 1;
             this.TabSupp.Text = "Suppliers";
             this.TabSupp.UseVisualStyleBackColor = true;
             // 
-            // cboSuppliers
+            // dgvProds
             // 
-            this.cboSuppliers.BackColor = System.Drawing.Color.Black;
-            this.cboSuppliers.ForeColor = System.Drawing.SystemColors.Window;
-            this.cboSuppliers.FormattingEnabled = true;
-            this.cboSuppliers.Location = new System.Drawing.Point(158, 24);
-            this.cboSuppliers.Name = "cboSuppliers";
-            this.cboSuppliers.Size = new System.Drawing.Size(211, 32);
-            this.cboSuppliers.TabIndex = 24;
-            // 
-            // txtSuppliers
-            // 
-            this.txtSuppliers.BackColor = System.Drawing.Color.Transparent;
-            this.txtSuppliers.Location = new System.Drawing.Point(3, 24);
-            this.txtSuppliers.Name = "txtSuppliers";
-            this.txtSuppliers.Size = new System.Drawing.Size(149, 31);
-            this.txtSuppliers.TabIndex = 25;
-            this.txtSuppliers.Text = "Suppliers:  ";
-            this.txtSuppliers.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.dgvProds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProds.Location = new System.Drawing.Point(8, 198);
+            this.dgvProds.Name = "dgvProds";
+            this.dgvProds.RowHeadersWidth = 51;
+            this.dgvProds.RowTemplate.Height = 24;
+            this.dgvProds.Size = new System.Drawing.Size(383, 153);
+            this.dgvProds.TabIndex = 31;
             // 
             // pnl1
             // 
@@ -375,26 +365,6 @@
             this.pnl1.Size = new System.Drawing.Size(383, 186);
             this.pnl1.TabIndex = 26;
             // 
-            // cmbProducts
-            // 
-            this.cmbProducts.BackColor = System.Drawing.Color.Black;
-            this.cmbProducts.ForeColor = System.Drawing.SystemColors.Window;
-            this.cmbProducts.FormattingEnabled = true;
-            this.cmbProducts.Location = new System.Drawing.Point(158, 79);
-            this.cmbProducts.Name = "cmbProducts";
-            this.cmbProducts.Size = new System.Drawing.Size(211, 32);
-            this.cmbProducts.TabIndex = 25;
-            // 
-            // lblProduct
-            // 
-            this.lblProduct.BackColor = System.Drawing.Color.Transparent;
-            this.lblProduct.Location = new System.Drawing.Point(3, 80);
-            this.lblProduct.Name = "lblProduct";
-            this.lblProduct.Size = new System.Drawing.Size(149, 31);
-            this.lblProduct.TabIndex = 26;
-            this.lblProduct.Text = "Product: ";
-            this.lblProduct.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // btnAddProdtoSup
             // 
             this.btnAddProdtoSup.BackColor = System.Drawing.Color.DimGray;
@@ -406,15 +376,46 @@
             this.btnAddProdtoSup.Text = "Add &Product to Supplier";
             this.btnAddProdtoSup.UseVisualStyleBackColor = false;
             // 
-            // dgvProds
+            // lblProduct
             // 
-            this.dgvProds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProds.Location = new System.Drawing.Point(8, 198);
-            this.dgvProds.Name = "dgvProds";
-            this.dgvProds.RowHeadersWidth = 51;
-            this.dgvProds.RowTemplate.Height = 24;
-            this.dgvProds.Size = new System.Drawing.Size(383, 153);
-            this.dgvProds.TabIndex = 31;
+            this.lblProduct.BackColor = System.Drawing.Color.Transparent;
+            this.lblProduct.Location = new System.Drawing.Point(3, 80);
+            this.lblProduct.Name = "lblProduct";
+            this.lblProduct.Size = new System.Drawing.Size(149, 31);
+            this.lblProduct.TabIndex = 26;
+            this.lblProduct.Text = "Product: ";
+            this.lblProduct.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cmbProducts
+            // 
+            this.cmbProducts.BackColor = System.Drawing.Color.Black;
+            this.cmbProducts.ForeColor = System.Drawing.SystemColors.Window;
+            this.cmbProducts.FormattingEnabled = true;
+            this.cmbProducts.Location = new System.Drawing.Point(158, 79);
+            this.cmbProducts.Name = "cmbProducts";
+            this.cmbProducts.Size = new System.Drawing.Size(211, 32);
+            this.cmbProducts.TabIndex = 25;
+            // 
+            // txtSuppliers
+            // 
+            this.txtSuppliers.BackColor = System.Drawing.Color.Transparent;
+            this.txtSuppliers.Location = new System.Drawing.Point(3, 24);
+            this.txtSuppliers.Name = "txtSuppliers";
+            this.txtSuppliers.Size = new System.Drawing.Size(149, 31);
+            this.txtSuppliers.TabIndex = 25;
+            this.txtSuppliers.Text = "Suppliers:  ";
+            this.txtSuppliers.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cboSuppliers
+            // 
+            this.cboSuppliers.BackColor = System.Drawing.Color.Black;
+            this.cboSuppliers.ForeColor = System.Drawing.SystemColors.Window;
+            this.cboSuppliers.FormattingEnabled = true;
+            this.cboSuppliers.Location = new System.Drawing.Point(158, 24);
+            this.cboSuppliers.Name = "cboSuppliers";
+            this.cboSuppliers.Size = new System.Drawing.Size(211, 32);
+            this.cboSuppliers.TabIndex = 24;
+            this.cboSuppliers.SelectedValueChanged += new System.EventHandler(this.cboSuppliers_SelectedValueChanged);
             // 
             // FrmTravel
             // 
@@ -439,8 +440,8 @@
             this.tabPackages.ResumeLayout(false);
             this.tabPackages.PerformLayout();
             this.TabSupp.ResumeLayout(false);
-            this.pnl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProds)).EndInit();
+            this.pnl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

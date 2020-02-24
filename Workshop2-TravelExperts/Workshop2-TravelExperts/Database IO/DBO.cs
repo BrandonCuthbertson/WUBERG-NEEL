@@ -21,7 +21,7 @@ namespace Workshop2_TravelExperts {
             SQLAdapter.SQLAdapter.GetFromDB<Products_Suppliers>(out product_supplier, db, query);
             // Creating the DB object
             if (product_supplier.Count > 0) {
-                packageProductSupplier.ProductSupplierID = product_supplier[0].ProductSupplierID;
+                packageProductSupplier.ProductSupplierID = product_supplier[0].ProductSupplierId;
                 packageProductSupplier.PackageID = packageID;
             }
             else { 

@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Reflection;
+using Workshop2_TravelExperts;
 
 /*
  * Author: Sarah
@@ -287,6 +288,11 @@ namespace SQLAdapter {
                 }
 
             }
+        }
+
+        internal static bool InsertToDBNOID<T>(T packageProductSupplier, TravelExpertsDBCon db)
+        {
+            throw new NotImplementedException();
         }
     }
     public interface I_SQLDB {
